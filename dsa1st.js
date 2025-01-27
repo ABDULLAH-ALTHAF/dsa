@@ -291,7 +291,7 @@
 // }
 
 
-//actons
+//actions
 
 // const nums = new LinkedList()
 // const nums1 = new LinkedList()

@@ -1,0 +1,10 @@
+creating a singly linked list
+adding values to it 
+display values of its
+adding first element into linked list
+adding element after a place
+deleting an element
+
+creating doubly linked list
+printing reverse
+adding before
