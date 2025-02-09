@@ -112,59 +112,54 @@
 //  ha.print()
 
 
-class HashTable{
-    constructor(size = 101){
-        this.table = new Array(size)
-    }
-    hash(key) {
-        let hash = 5381; // A prime number for better distribution
-        for (let i = 0; i < key.length; i++) {
-            hash = (hash * 33) + key.charCodeAt(i); // Multiply by 33 and add ASCII value
-        }
-        console.log(hash % this.table.length,"hiih");
-        return hash % this.table.length; // Ensure it stays within table size
-    }
-    set(key,value){
-        let index = this.hash(key)
-        if(!this.table[index]) this.table[index] = []
-        this.table[index].push([key,value])
-    }
-    get(key){
-        let index = this.hash(key)
-        if(!this.table[index]) return undefined
-        for(let pair of this.table[index]){
-            if(pair[0]==key) return pair[0],pair[1]
-        }
-        return undefined
-    }
-    print(){
-        if(!this.table)return "no table"
-        for(let tm of this.table){
-            if(tm != undefined){
-                console.log(tm);
-            }
-        }
-    }
-    remove(key){
-        let index = this.hash(key)
-        if(!this.table[index]) return false
-        this.table[index] = this.table[index].filter(pair => pair[0]!==key)
-    }
-}
+// class HashTable{
+//     constructor(size = 101){
+//         this.table = new Array(size)
+//     }
+//     hash(key){
+//         return key.length % this.table.length
+//     }
+//     set(key,value){
+//         let index = this.hash(key)
+//         if(!this.table[index]) this.table[index] = []
+//         this.table[index].push([key,value])
+//     }
+//     get(key){
+//         let index = this.hash(key)
+//         if(!this.table[index]) return undefined
+//         for(let pair of this.table[index]){
+//             if(pair[0]==key) return pair[0],pair[1]
+//         }
+//         return undefined
+//     }
+//     print(){
+//         if(!this.table)return "no table"
+//         for(let tm of this.table){
+//             if(tm != undefined){
+//                 console.log(tm);
+//             }
+//         }
+//     }
+//     remove(key){
+//         let index = this.hash(key)
+//         if(!this.table[index]) return false
+//         this.table[index] = this.table[index].filter(pair => pair[0]!==key)
+//     }
+// }
 
 
-let h1 = new HashTable()
-h1.set("althaf",1500)
-h1.set("sadhik",2500)
-h1.set("vishnav",3500)
-
-console.log(h1.get("althaf"));
-console.log(h1.get("sadhik"));
-console.log(h1.get("vishnav"));
-console.log('======================');
-h1.remove("sadhik")
+// let h1 = new HashTable()
+// h1.set("althaf",1500)
+// h1.set("sadhik",2500)
+// h1.set("vishnav",3500)
 
 // console.log(h1.get("althaf"));
 // console.log(h1.get("sadhik"));
 // console.log(h1.get("vishnav"));
-h1.print()
+// console.log('======================');
+// h1.remove("sadhik")
+
+// console.log(h1.get("althaf"));
+// console.log(h1.get("sadhik"));
+// console.log(h1.get("vishnav"));
+// h1.print()

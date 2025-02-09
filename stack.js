@@ -33,7 +33,19 @@ class stack{
         this.push(temp)
     }
     reverse(){
-        
+        if(this.isEmpty()) return 
+        let temp = this.pop()
+        this.reverse()
+        this.insertBottom(temp)
+    }
+    insertBottom(element){
+        if(this.isEmpty()){
+            this.push(element)
+            return
+        }
+        let temp = this.pop()
+        this.insertBottom(element)
+        this.push(temp)
     }
     print(){
         console.log(this.items.toString());
@@ -50,7 +62,8 @@ s1.push("f")
 s1.push("g")
 s1.print()
 console.log('--------------------------');
-s1.delete()
+// s1.delete()
+s1.reverse()
 s1.print()
 // s1.pop()
 // s1.pop()
